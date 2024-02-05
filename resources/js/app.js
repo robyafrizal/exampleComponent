@@ -17,6 +17,8 @@ const app = createApp({});
 
 import ExampleComponent from "./components/ExampleComponent.vue";
 app.component("example-component", ExampleComponent);
+import OtherComponent from "./components/OtherComponent.vue";
+app.component("other-component", OtherComponent);
 
 // Vue.component("other-component", require("./components/OtherComponent.vue".default));
 

@@ -41,12 +41,16 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>{{ products[0].name }}</td>
-                    <td>{{ products[0].stock }}</td>
-                    <td>Rp. {{ products[0].price }}</td>
+                <tr v-for="(keranjang, ids) in keranjangs" :key="ids">
+                    <td>{{ keranjang.nama }}</td>
+                    <td>{{ keranjang.quantity }}</td>
+                    <td>Rp. {{ keranjang.harga }}</td>
                     <td>
-                        <button type="button" class="btn btn-danger">
+                        <button
+                            type="button"
+                            class="btn btn-danger"
+                            v-on:click="deleteItem(ids)"
+                        >
                             Delete
                         </button>
                     </td>
@@ -89,7 +93,24 @@ export default {
                     price: 10000,
                 },
             ],
-            total: 123456,
+            total: 0,
+            keranjangs: [
+                {
+                    nama: "Indomie Goreng Rendang",
+                    quantity: 0,
+                    harga: 3900,
+                },
+                {
+                    nama: "Mie Gelas Rendang",
+                    quantity: 0,
+                    harga: 2500,
+                },
+                {
+                    nama: "Bakmi Mewah",
+                    quantity: 0,
+                    harga: 10000,
+                },
+            ],
         };
     },
     methods: {
@@ -98,10 +119,23 @@ export default {
             let output = {
                 stock: this.products[idx].stock - 1,
             };
+            let result = {
+                quantity: this.keranjangs[idx].quantity + 1,
+                // harga:
+                //     this.keranjangs[idx].harga *
+                //     (this.keranjangs[idx].quantity + 1),
+            };
             this.products[idx].stock = output.stock;
+            this.keranjangs[idx].quantity = result.quantity;
+            this.keranjangs[idx].harga *= result.quantity;
+            this.total += this.keranjangs[idx].harga;
         },
         checkout() {
             return alert("Pesanan anda adalah : " + this.total);
+        },
+        deleteItem(ids) {
+            // console.log("delete file", ids);
+            this.keranjangs.splice(ids, 1);
         },
     },
     mounted() {
