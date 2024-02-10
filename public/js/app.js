@@ -21433,6 +21433,10 @@ __webpack_require__.r(__webpack_exports__);
       "default": function _default() {
         return [];
       }
+    },
+    total: {
+      type: Number,
+      "default": 0
     }
   },
   methods: {
@@ -21612,7 +21616,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       text: "Delete",
       "class": "btn-danger"
     })])]);
-  }), 128 /* KEYED_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "Rp. " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.total), 1 /* TEXT */), _hoisted_4], 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, _ctx.isCarts]])])]);
+  }), 128 /* KEYED_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "Rp. " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.total), 1 /* TEXT */), _hoisted_4])])]);
 }
 
 /***/ }),
@@ -21642,10 +21646,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_product_component, {
     productData: _ctx.products,
     onEmitAdd: $options.addToCart
-  }, null, 8 /* PROPS */, ["productData", "onEmitAdd"]), _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_cart_component, {
+  }, null, 8 /* PROPS */, ["productData", "onEmitAdd"]), _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_cart_component, {
     cartData: _ctx.carts,
+    total: _ctx.total,
     onEmitDelete: $options.deleteItem
-  }, null, 8 /* PROPS */, ["cartData", "onEmitDelete"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_button_component, {
+  }, null, 8 /* PROPS */, ["cartData", "total", "onEmitDelete"]), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, _ctx.isCarts]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_button_component, {
     onEmitButton: _cache[0] || (_cache[0] = function ($event) {
       return $options.checkout();
     }),
@@ -21714,7 +21719,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_ProductComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/ProductComponent.vue */ "./resources/js/components/ProductComponent.vue");
 /* harmony import */ var _components_CartComponent_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/CartComponent.vue */ "./resources/js/components/CartComponent.vue");
 /* harmony import */ var _components_ButtonComponent_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/ButtonComponent.vue */ "./resources/js/components/ButtonComponent.vue");
-Object(function webpackMissingModule() { var e = new Error("Cannot find module './components/OtherComponent.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -21739,8 +21743,6 @@ app.component("product-component", _components_ProductComponent_vue__WEBPACK_IMP
 app.component("cart-component", _components_CartComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"]);
 
 app.component("button-component", _components_ButtonComponent_vue__WEBPACK_IMPORTED_MODULE_5__["default"]);
-
-app.component("other-component", Object(function webpackMissingModule() { var e = new Error("Cannot find module './components/OtherComponent.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 // Vue.component("other-component", require("./components/OtherComponent.vue".default));
 

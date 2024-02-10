@@ -21,7 +21,7 @@
                     />
                 </td>
             </tr>
-            <tr v-show="isCarts">
+            <tr>
                 <td colspan="2">Total</td>
                 <td>Rp. {{ total }}</td>
                 <td></td>
@@ -39,6 +39,10 @@ export default {
             default: () => {
                 return [];
             },
+        },
+        total: {
+            type: Number,
+            default: 0,
         },
     },
     methods: {

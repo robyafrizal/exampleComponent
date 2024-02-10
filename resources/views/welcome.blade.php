@@ -20,7 +20,6 @@
 <body>
     <div id="app">
         <example-component></example-component>
-        {{-- <other-component></other-component> --}}
     </div>
     <script src="{{ mix('js/app.js') }}" type="text/javascript"></script>
 </body>

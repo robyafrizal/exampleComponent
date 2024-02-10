@@ -23,8 +23,6 @@ import CartComponent from "./components/CartComponent.vue";
 app.component("cart-component", CartComponent);
 import ButtonComponent from "./components/ButtonComponent.vue";
 app.component("button-component", ButtonComponent);
-import OtherComponent from "./components/OtherComponent.vue";
-app.component("other-component", OtherComponent);
 
 // Vue.component("other-component", require("./components/OtherComponent.vue".default));
 

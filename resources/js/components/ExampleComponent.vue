@@ -3,7 +3,12 @@
         <h1>Semua Produk</h1>
         <product-component :productData="products" @emit-add="addToCart" />
         <h1>Keranjang Belanja</h1>
-        <cart-component :cartData="carts" @emit-delete="deleteItem" />
+        <cart-component
+            :cartData="carts"
+            :total="total"
+            @emit-delete="deleteItem"
+            v-show="isCarts"
+        />
         <button-component
             @emit-button="checkout()"
             text="Checkout"
