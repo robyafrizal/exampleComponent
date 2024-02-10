@@ -17,6 +17,12 @@ const app = createApp({});
 
 import ExampleComponent from "./components/ExampleComponent.vue";
 app.component("example-component", ExampleComponent);
+import ProductComponent from "./components/ProductComponent.vue";
+app.component("product-component", ProductComponent);
+import CartComponent from "./components/CartComponent.vue";
+app.component("cart-component", CartComponent);
+import ButtonComponent from "./components/ButtonComponent.vue";
+app.component("button-component", ButtonComponent);
 import OtherComponent from "./components/OtherComponent.vue";
 app.component("other-component", OtherComponent);
 
