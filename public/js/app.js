@@ -21486,8 +21486,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     addToCart: function addToCart(idx) {
-      this.products[idx].stock = this.products[idx].stock - 1;
-      if (this.products[idx].stock > 0) {
+      if (this.carts) {
         this.carts.push({
           nama: this.products[idx].name,
           quantity: 1,
@@ -21497,6 +21496,7 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         this.carts[idx].quantity++;
       }
+      this.products[idx].stock = this.products[idx].stock - 1;
       this.total += this.carts[idx].harga;
       console.log(this.carts[idx]);
     },
@@ -21541,8 +21541,8 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
-    addToCart: function addToCart(idx) {
-      this.$emit("emit-add", idx);
+    addToCart: function addToCart(index) {
+      this.$emit("emit-add", index);
     }
   }
 });

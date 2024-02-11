@@ -50,9 +50,7 @@ export default {
     },
     methods: {
         addToCart(idx) {
-            this.products[idx].stock = this.products[idx].stock - 1;
-
-            if (this.products[idx].stock > 0) {
+            if (this.carts) {
                 this.carts.push({
                     nama: this.products[idx].name,
                     quantity: 1,
@@ -62,6 +60,7 @@ export default {
             } else {
                 this.carts[idx].quantity++;
             }
+            this.products[idx].stock = this.products[idx].stock - 1;
             this.total += this.carts[idx].harga;
             console.log(this.carts[idx]);
         },
